@@ -15,49 +15,23 @@
     <div class="container my-3 cv">
         <h1 class="text-center mb-4 text-bg-dark px-2 py-3">Contact</h1>
         <div class="row w-25">
-            <form id="myForm" action="submit-form.php" method="POST" onsubmit="return validateForm()">
+            <form id="myForm">
                 <div class="form-group">
-                  <label for="firstName">Imię:</label>
-                  <input type="text" class="form-control" id="firstName" placeholder="Wpisz imię" name="firstName" required>
-                  <div class="invalid-feedback">Pole imię jest wymagane.</div>
+                  <label for="firstName">Name:</label>
+                  <input type="text" class="form-control" id="firstName" name="firstName" required>
                 </div>
                 <div class="form-group">
-                  <label for="lastName">Nazwisko:</label>
-                  <input type="text" class="form-control" id="lastName" placeholder="Wpisz nazwisko" name="lastName" required>
-                  <div class="invalid-feedback">Pole nazwisko jest wymagane.</div>
+                  <label for="lastName">Surname:</label>
+                  <input type="text" class="form-control" id="lastName" name="lastName" required>
                 </div>
                 <div class="form-group">
                   <label for="email">Email:</label>
-                  <input type="email" class="form-control" id="email" placeholder="Wpisz email" name="email" required>
-                  <div class="invalid-feedback">Pole email jest wymagane i musi zawierać prawidłowy adres email.</div>
+                  <input type="email" class="form-control" id="email" name="email" required>
                 </div>
-                <button type="submit" class="btn btn-dark mt-2">Wyślij</button>
+                <button type="submit" class="btn btn-dark mt-2">Send</button>
               </form>
         </div>
     </div>
-    <script>
-        function validateForm() {
-          var form = document.getElementById('myForm');
-          var firstName = document.getElementById('firstName').value.trim();
-          var lastName = document.getElementById('lastName').value.trim();
-          var email = document.getElementById('email').value.trim();
-          
-          // Sprawdzamy, czy pola są uzupełnione
-          if (firstName === "" || lastName === "" || email === "") {
-            form.classList.add('was-validated');
-            return false;
-          }
-          
-          // Sprawdzamy, czy email jest prawidłowy
-          var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailRegex.test(email)) {
-            form.classList.add('was-validated');
-            return false;
-          }
-          
-          return true;
-        }
-      </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
